@@ -200,11 +200,11 @@ def plot_fair_metrics(fair_metrics):
     bound = [[-0.1,0.1],[-0.1,0.1],[-0.1,0.1],[0.8,1.2],[0,0.25]]
 
     display(Markdown("### Check bias metrics :"))
-    display(Markdown("A model can be considered bias if just one of these five metrics show that this model is biased."))
+    #display(Markdown("A model can be considered bias if just one of these five metrics show that this model is biased."))
     for attr in fair_metrics.index[1:len(fair_metrics)].values:
-        display(Markdown("#### For the %s attribute :"%attr))
+        #display(Markdown("#### For the %s attribute :"%attr))
         check = [bound[i][0] < fair_metrics.loc[attr][i] < bound[i][1] for i in range(0,5)]
-        display(Markdown("With default thresholds, bias against unprivileged group detected in **%d** out of 5 metrics"%(5 - sum(check))))
+        #display(Markdown("With default thresholds, bias against unprivileged group detected in **%d** out of 5 metrics"%(5 - sum(check))))
 
     for i in range(0,5):
         plt.subplot(1, 5, i+1)
